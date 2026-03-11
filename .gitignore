@@ -1,0 +1,7 @@
+task_2/data/
+*xml
+*iml
+task_2/.ipynb_checkpoints/
+*cfg
+*json
+task_2/models/
