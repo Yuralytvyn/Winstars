@@ -125,11 +125,14 @@ def main():
     print(f"User asked weather there is a/an {animal_name} in the picture")
 
     picture = "data/raw-img/elephant/e83cb10c28f5063ed1584d05fb1d4e9fe777ead218ac104497f5c978a4efbcb0_640.jpg"
-    predict_image(picture)
+    predicted_animal_name = predict_image(picture)
 
     img = Image.open(picture)
     img.show()
-
+    if animal_name.lower() == predicted_animal_name.lower():
+        print(True)
+    else:
+        print(False)
 
 if __name__ == "__main__":
     main()

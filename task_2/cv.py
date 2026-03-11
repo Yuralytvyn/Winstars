@@ -78,7 +78,7 @@ def build_model(num_classes):
     )
     base.trainable = False
     inputs = keras.Input(shape=(*IMAGE_SIZE,3))
-    x = layers.Rescaling(1./127.5, offset=-1)(inputs)  # нормалізація для MobileNetV2
+    x = layers.Rescaling(1./127.5, offset=-1)(inputs)
     x = base(x, training=False)
     x = layers.GlobalAveragePooling2D()(x)
     outputs = layers.Dense(num_classes, activation='softmax')(x)
